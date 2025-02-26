@@ -1,0 +1,9 @@
+<footer>
+    <small>
+        {{ if .Site.Copyright }}
+            {{ .Site.Copyright | safeHTML }}
+        {{ else }}
+            {{ "&copy; Copyright Year, Your Name" | safeHTML }}
+        {{ end }}
+    </small>
+</footer>

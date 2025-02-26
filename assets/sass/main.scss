@@ -1,0 +1,142 @@
+$paradise-pink: #EA1F4B;
+$paradise-pink-light: #EF5778;
+
+$header-bg: #ffffff;
+$link-color: #333;
+$link-hover: #007bff;
+
+@font-face {
+  font-family: 'CommitMonoNerdFont';
+  src: url('/assets/fonts/CommitMonoNerdFont-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CommitMonoNerdFont';
+  src: url('/assets/fonts/CommitMonoNerdFont-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CommitMonoNerdFont';
+  src: url('/assets/fonts/CommitMonoNerdFont-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CommitMonoNerdFont';
+  src: url('/assets/fonts/CommitMonoNerdFont-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+// Apply fonts to elements
+:root {
+  --font-mono: 'CommitMonoNerdFont', monospace;
+}
+
+body {
+  font-family: 'CommitMonoNerdFont', monospace;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  footer {
+      margin-top: auto;
+  } 
+  /* text-align: center;  */
+}
+
+// For code blocks
+pre, code, kbd {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    
+    strong {
+        font-weight: 700;
+    }
+    
+    em {
+        font-style: italic;
+    }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+header {
+  background: $header-bg;
+  padding: 1rem 0;
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    li a {
+      text-decoration: none;
+      color: $link-color;
+      
+      &:hover {
+        color: $link-hover;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  /* margin-top: auto; */
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+    
+    @media (min-width: 768px) {
+        font-size: 3rem;
+    }
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 3.8rem 0 .6rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p, ul, ol {
+  font-size: 1.8rem;
+  margin: 0 0 .8em;
+}
+
+a {
+  text-decoration: none;
+  color: $paradise-pink;
+
+  &:hover {
+    color: $paradise-pink-light;
+  }
+}
+
+article {
+  padding: 2rem 1rem;
+  max-width: calc(44em + 2rem);
+  margin: 0 auto;
+}
