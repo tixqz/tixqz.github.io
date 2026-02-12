@@ -1,8 +1,9 @@
-baseURL = 'https://tixqz.github.io'
+baseURL = "https://tixqz.github.io/"
 languageCode = "en-us"
-Title = "Platforming Rant"
+title = "Platforming Rant"
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; Copyright notice"
+mainSections = ["posts"]
 
 [outputs]
   home = ["HTML", "RSS"]
@@ -12,7 +13,7 @@ copyright = "&copy; Copyright notice"
   baseName = "feed"
 
 [params]
-  mainSections = ["posts"]
+  description = "Exploring the latest in technology and development"
   # Logo image. This is displayed ogp image.
   # logo = "/path/to/logo"
   # favicon = "/path/to/favicon"

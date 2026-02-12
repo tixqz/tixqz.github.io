@@ -1,18 +1,19 @@
 {{ define "page" }}
 <article class="homepage">
-    <!-- Add title here -->
-    <h1 class="page-title">{{ .Title }}</h1>
-    
-    {{ .Content }}
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ .Content }}
 
-    <section class="recent-posts">
-        <h2>Latest Articles</h2>
-        {{ range first 5 .Site.RegularPages }}
-        <div class="post-item">
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
-        </div>
-        {{ end }}
-    </section>
+  {{ $pages := where .Site.RegularPages "Section" "in" .Site.MainSections }}
+  <section class="recent-posts">
+    <h2>Latest Articles</h2>
+    {{ range first 10 ($pages.ByDate.Reverse) }}
+    <div class="post-item">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    </div>
+    {{ else }}
+    <p>No posts yet.</p>
+    {{ end }}
+  </section>
 </article>
 {{ end }}
